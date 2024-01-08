@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Early detection and termination of negative activations}\label{alg:ENT}
+\begin{algorithmic}[1]
+\State $z^{+}[j],\ z^{-}[j] $ \texttt{bits}\;
+\For{\texttt{j : 1 \ to \ $Num_{Cycles}$}}
+    \State $z^{+}[j] \gets z^{+}[j]\ ^\frown z^{+}_{j}$\; 
+    \State $z^{-}[j] \gets  z^{-}[j]\ ^\frown z^{-}_{j}$\;
+    \If{$z^{+}[j] < z^{-}[j]$}
+        \State \texttt{Terminate}
+    \Else
+        \State \texttt{Continue}
+    \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
